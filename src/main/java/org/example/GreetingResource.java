@@ -14,7 +14,14 @@ public class GreetingResource {
     DefaultApi api;
 
     @GET
-    public void callRemoteHello() {
+    @Path("/withSecurity")
+    public void callRemoteWithSecurity() {
         api.getWithBearerTokenSecurityScheme();
+    }
+
+    @GET
+    @Path("/simple")
+    public void callRemoteSimple() {
+        api.getWithSimpleBearerTokenSecurityScheme();
     }
 }
